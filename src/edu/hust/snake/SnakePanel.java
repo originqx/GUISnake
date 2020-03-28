@@ -59,7 +59,7 @@ public class SnakePanel extends JPanel implements KeyListener ,ActionListener {
         this.setBackground(Color.black);
         Data.head.paintIcon(this, g, 25, 11);
         g.fillRect(25, 75, 850, 600);
-        Data.food.paintIcon(this, g, 25,75 );
+        Data.food.paintIcon(this, g, foodx,foody );
 
         g.setColor(Color.white);
         g.setFont(new Font("weiryh", Font.BOLD, 20));
@@ -139,7 +139,7 @@ public class SnakePanel extends JPanel implements KeyListener ,ActionListener {
             if (snakex[0] == foodx && snakey[0] == foody) {
                 length++;
                 foodx = 25 + 25 * random.nextInt(34);
-                foody = 25 + 25 * random.nextInt(24);
+                foody = 75 + 25 * random.nextInt(24);
                 score += 10;
             }
             for (int i = length-1; i > 0; i--) {
